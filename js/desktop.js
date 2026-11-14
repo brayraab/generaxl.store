@@ -118,7 +118,7 @@ document.querySelectorAll(".desktop-icon").forEach(icon => {
         icon.classList.add("selected");
     });
 
-    icon.addEventListener("dblclick", () => {
+    icon.addEventListener("click", () => {
         openWindow(icon.dataset.window);
     });
 
