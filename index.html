@@ -2,85 +2,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>GeneraXL.Store</title>
-  <meta name="description" content="My personal blog, projects, and handmade crafts.">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Desktop</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- HEADER / NAVIGATION -->
-  <header>
-    <h1>GeneraXL.Store</h1>
-    <nav>
-      <a href="#shop">Shop</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<main class="desktop">
 
-  <!-- INTRODUCTION -->
-  <main>
-    <section class="intro">
-      <h1>GeneraXL Mountain Works</h1>
-      
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>Coming soon.</p>
+    <!-- DESKTOP ICONS -->
+    <div class="desktop-icons">
+
+        <div class="desktop-icon" data-window="home">
+            <span>💻</span>
+            <p>My Computer</p>
+        </div>
+
+        <div class="desktop-icon" data-window="about">
+            <span>📁</span>
+            <p>About Me</p>
+        </div>
+
+        <div class="desktop-icon" data-window="blog">
+            <span>📝</span>
+            <p>Blog</p>
+        </div>
+
+        <div class="desktop-icon" data-window="photos">
+            <span>🖼️</span>
+            <p>Photos</p>
+        </div>
+
+        <div class="desktop-icon" data-window="videos">
+            <span>🎞️</span>
+            <p>Videos</p>
+        </div>
+
+        <div class="desktop-icon" data-window="shop">
+            <span>🛒</span>
+            <p>Shop</p>
+        </div>
+
+    </div>
+
+    <!-- HOME WINDOW -->
+    <section class="window" id="home">
+        <div class="title-bar">
+            <span>My Computer</span>
+            <div class="window-controls">
+                <button class="minimize" title="Minimize">_</button>
+                <button class="maximize" title="Maximize">□</button>
+                <button class="close" title="Close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Welcome to my desktop!</h2>
+            <p>Thanks for stopping by.</p>
+            <p>Explore the icons to find your way around.</p>
+        </div>
     </section>
 
-    <!-- EMBEDDED VIDEO -->
-    <section id="videos">
-      <h2>Video</h2>
-
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          title="My video"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
+    <!-- ABOUT WINDOW -->
+    <section class="window" id="about">
+        <div class="title-bar">
+            <span>About Me</span>
+            <div class="window-controls">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>About Me</h2>
+            <p>Welcome to my little corner of the internet.</p>
+        </div>
     </section>
 
-    <!-- SHOPIFY SHOP -->
-    <section id="shop">
-     
-        <h3>Geodesic Dome Heavyweight Hoodie</h3>
-        <p>Example product description</p>
-        <p>$70.00</p>
-
-        <a
-          class="shop-button"
-          href="https://YOUR-SHOPIFY-PRODUCT-URL"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy Now
-        </a>
-      </div>
+    <!-- BLOG WINDOW -->
+    <section class="window" id="blog">
+        <div class="title-bar">
+            <span>My Blog</span>
+            <div class="window-controls">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Latest Blog Posts</h2>
+            <hr>
+            <h3>Welcome to my blog</h3>
+            <p>November 14, 2026</p>
+            <p>This is where your blog posts will appear.</p>
+        </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h3>About</h3>
-      <p>
-        GeneraXL is a creative venture by Bray Raab.
-      </p>
+    <!-- PHOTOS WINDOW -->
+    <section class="window" id="photos">
+        <div class="title-bar">
+            <span>My Photos</span>
+            <div class="window-controls">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Photo Gallery</h2>
+            <p>Your photos will go here.</p>
+        </div>
     </section>
 
-  </main>
+    <!-- VIDEOS WINDOW -->
+    <section class="window" id="videos">
+        <div class="title-bar">
+            <span>Media Player</span>
+            <div class="window-controls">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Videos</h2>
+            <p>Your videos will go here.</p>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; GeneraXL. All Rights Reserved.</p>
-  </footer>
+    <!-- SHOP WINDOW -->
+    <section class="window" id="shop">
+        <div class="title-bar">
+            <span>Online Shop</span>
+            <div class="window-controls">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Shop</h2>
+            <p>Welcome to the shop.</p>
+        </div>
+    </section>
+
+    <!-- START MENU -->
+    <div class="start-menu" id="start-menu">
+
+        <div class="start-sidebar">
+            WINDOWS 95
+        </div>
+
+        <div class="start-menu-items">
+
+            <button data-window="home">💻 My Computer</button>
+            <button data-window="about">📁 About Me</button>
+            <button data-window="blog">📝 Blog</button>
+            <button data-window="photos">🖼️ Photos</button>
+            <button data-window="videos">🎞️ Videos</button>
+            <button data-window="shop">🛒 Shop</button>
+
+            <hr>
+
+            <button id="shutdown">🔌 Shut Down</button>
+
+        </div>
+    </div>
+
+</main>
+
+<!-- TASKBAR -->
+<footer class="taskbar">
+
+    <button class="start-button" id="start-button">
+        🪟 Start
+    </button>
+
+    <div id="taskbar-windows"></div>
+
+    <div class="clock" id="clock"></div>
+
+</footer>
+
+<script src="js/desktop.js"></script>
 
 </body>
 </html>
-
