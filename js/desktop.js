@@ -130,6 +130,15 @@ document.querySelectorAll(".desktop-icon").forEach(icon => {
 
 });
 
+ // PREVENT WINDOW CONTROLS FROM TRIGGERING DRAGGING
+
+document.querySelectorAll(".window-controls").forEach(controls => {
+    controls.addEventListener("pointerdown", event => {
+        event.stopPropagation();
+    });
+});
+
+
 // DRAG WINDOWS
 
 document.querySelectorAll(".title-bar").forEach(bar => {
@@ -140,7 +149,7 @@ document.querySelectorAll(".title-bar").forEach(bar => {
 
     bar.addEventListener("pointerdown", event => {
 
-        if (event.target.closest("button")) return;
+            if (event.target.closest(".window-controls")) return;
 
         const win = bar.closest(".window");
 
