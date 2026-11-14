@@ -12,12 +12,18 @@ body {
 
 /* DESKTOP */
 
+
 .desktop {
+    min-height: 100vh;
+    position: relative;
+
+    background-color: #008080;
     background-image: url("../images/background/0029_26.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 /* DESKTOP ICONS */
 
