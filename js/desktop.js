@@ -35,16 +35,72 @@ function focusWindow(win) {
     updateTaskbar();
 }
 
-// CLOSE WINDOW
+
+// WINDOW CONTROLS
 
 windows.forEach(win => {
 
-    win.querySelector(".close").addEventListener("click", () => {
-        win.style.display = "none";
-        win.classList.remove("maximized");
-        win.dataset.minimized = "false";
-        activeWindow = null;
-        updateTaskbar();
+    win.querySelectorAll(".window-controls button").forEach(button => {
+
+        button.addEventListener("click", event => {
+
+            event.stopPropagation();
+
+            if (button.classList.contains("close")) {
+                win.style.display = "none";
+                win.classList.remove("maximized");
+                win.dataset.minimized = "false";
+
+                if (activeWindow === win) {
+                    activeWindow = null;
+                }
+
+                updateTaskbar();
+            }
+
+            if (button.classList.contains("minimize")) {
+                win.dataset.minimized = "true";
+                win.style.display = "none";
+
+                if (activeWindow === win) {
+                    activeWindow = null;
+                }
+
+                updateTaskbar();
+            }
+
+            if (button.classList.contains("maximize")) {
+
+                if (!win.classList.contains("maximized")) {
+
+                    win.dataset.previous = JSON.stringify({
+                        top: win.style.top,
+                        left: win.style.left,
+                        width: win.style.width,
+                        height: win.style.height
+                    });
+
+                    win.classList.add("maximized");
+
+                } else {
+
+                    win.classList.remove("maximized");
+
+                    const previous = JSON.parse(
+                        win.dataset.previous || "{}"
+                    );
+
+                    win.style.top = previous.top || "80px";
+                    win.style.left = previous.left || "180px";
+                    win.style.width = previous.width || "";
+                    win.style.height = previous.height || "";
+
+                    delete win.dataset.previous;
+                }
+
+                focusWindow(win);
+            }
+        });
     });
 
     win.addEventListener("pointerdown", () => {
@@ -55,56 +111,6 @@ windows.forEach(win => {
 
 });
 
-// MINIMIZE WINDOW
-
-windows.forEach(win => {
-    win.querySelector(".minimize").addEventListener("click", () => {
-        win.dataset.minimized = "true";
-        win.style.display = "none";
-
-        if (activeWindow === win) {
-            activeWindow = null;
-        }
-
-        updateTaskbar();
-    });
-});
-
-// MAXIMIZE AND RESTORE
-
-windows.forEach(win => {
-
-    win.querySelector(".maximize").addEventListener("click", () => {
-
-        if (!win.classList.contains("maximized")) {
-
-            win.dataset.previous = JSON.stringify({
-                top: win.style.top,
-                left: win.style.left,
-                width: win.style.width,
-                height: win.style.height
-            });
-
-            win.classList.add("maximized");
-
-        } else {
-
-            win.classList.remove("maximized");
-
-            const previous = JSON.parse(win.dataset.previous || "{}");
-
-            win.style.top = previous.top || "80px";
-            win.style.left = previous.left || "180px";
-            win.style.width = previous.width || "";
-            win.style.height = previous.height || "";
-
-            delete win.dataset.previous;
-        }
-
-        focusWindow(win);
-    });
-
-});
 
 // DESKTOP ICONS
 
